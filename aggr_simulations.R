@@ -212,16 +212,16 @@ sim_scm25_data <- function(beta1, n, delta1, delta2) {
   i1 <- rnorm(n)
   i2 <- rnorm(n)
   d11 <- delta1[1]
-  d21 <- delta1[2]
-  d12 <- delta2[1]
+  d12 <- delta1[2]
+  d21 <- delta2[1]
   d22 <- delta2[2]
   
   alpha1 <- 1
   alpha2 <- 1
   beta2 <- 2 
   u <- rnorm(n)
-  a1 <- d11*i1 + d12*i2 + 0.5*u + rnorm(n)
-  a2 <- d21*i1 + d22*i2 + 0.5*u + rnorm(n)
+  a1 <- d11*i1 + d21*i2 + 0.5*u + rnorm(n)
+  a2 <- d12*i1 + d22*i2 + 0.5*u + rnorm(n)
   a <- alpha1*a1 + alpha2*a2
   y <- beta1*a1 + beta2*a2 + 2*u + rnorm(n)
   
